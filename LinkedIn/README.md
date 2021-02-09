@@ -8,7 +8,7 @@ The Java code converts the LinkedIn .txt files into ElasticSearch compliant JSON
 1. Using the Java code, data to json conversion should take approximately ~2 hours on Desktop.
 2. Using the Python code, it should take ~36 hours. 
 
-I highly recommend using the Java code. If anyone wants to optimize the Python code, go ahead.  
+<b><u>I highly recommend using the Java code.</u></b> If anyone wants to optimize the Python code, go ahead.  
 
 ## Necessary Steps
 
