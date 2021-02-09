@@ -1,4 +1,4 @@
-## ReadMe
+## Description
 
 The Java code converts the LinkedIn .txt files into ElasticSearch compliant JSON.
 
