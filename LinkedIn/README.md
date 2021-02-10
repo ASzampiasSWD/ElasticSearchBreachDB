@@ -15,9 +15,9 @@ Change line <b>39</b> to where you want the output files to be. Make sure that t
 
 ## Stats 
 
-The LinkedIn dump contains 41,093,000 email/password records. 
+The LinkedIn dump contains 82,201,380 email/password records. 
 
-A total of 2834 JSON files will be generated. Each file contains 14,500 records.
+A total of 2834 JSON files will be generated. Each file contains 29,001 records.
 
 ## File Manipulation
 
