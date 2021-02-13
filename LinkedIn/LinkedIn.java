@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 import java.util.Scanner;
 
 
@@ -30,13 +29,13 @@ public class LinkedIn {
 	}
 	
 	private static String createMetaJSON() {
-		String metajson = "{\"index\" : {\"_index\": \"breach\", \"_type\" : \"LinkedIn\", \"_id\": \"" + lineCount + "\"}}";
+		String metajson = "{\"index\" : {\"_index\": \"breach-linkedin\", \"_type\" : \"_doc\", \"_id\": \"" + lineCount + "\"}}";
 		//System.out.println(metajson);
 		return metajson;
 	}
 	
 	private static String writeFile(String metajson, String datajson) {
-		File f = new File("E:\\BreachDatabases\\LinkedIn\\LinkedIn_RF\\Data\\output2\\linkedin_"+outputFileNumber.toString()+".json");
+		File f = new File("E:\\BreachDatabases\\LinkedIn\\LinkedIn_RF\\Data\\output\\linkedin_"+outputFileNumber.toString()+".json");
 		if(!f.exists()){
 			  try {
 				f.createNewFile();
@@ -65,19 +64,7 @@ public class LinkedIn {
 			  String[] arLines = line.split(":");
 			  if (arLines.length >= 2) {
 					String index = " {\"Email\": \"" + arLines[0] + "\"," +
-							       "\"Password\": \"" + arLines[1] + "\"," +
-							       "\"Username\": \"\", " +
-							       "\"Name\": \"\", " + 
-							       "\"First Name\": \"\", " +
-							       "\"Last Name\": \"\", " +
-							       "\"Middle Name\": \"\", " +
-							       "\"Website\": \"\", " +
-							       "\"Phone\": \"\", " +
-							       "\"Hash1\": \"\", " +
-							       "\"Hash2\": \"\", " +
-							       "\"Physical Address\": \"\", " +
-							       "\"Mailing Address\": \"\", " +
-							       "\"Password Hint\": \"\"} ";
+							       "\"Password\": \"" + arLines[1] + "\"}";
 					//System.out.println(index);
 					String metajson = createMetaJSON();
 					writeFile(metajson, index);
@@ -104,7 +91,7 @@ public class LinkedIn {
 	            	//System.out.println(line);
 	            	lineCount++;
 	            	maxLineCount++;
-	            	if (maxLineCount > 29000) {
+	            	if (maxLineCount > 50000) {
 	            		maxLineCount = 0;
 	            		outputFileNumber++;
 	            	}

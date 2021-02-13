@@ -9,15 +9,15 @@ The Java code converts the LinkedIn .txt files into ElasticSearch compliant JSON
 
 ## Necessary Steps
 
-Change line <b>22</b> to the directory where the .txt files are located
+Change line <b>21</b> to the directory where the .txt files are located
 
-Change line <b>39</b> to where you want the output files to be. Make sure that the directory exists.
+Change line <b>38</b> to where you want the output files to be. Make sure that the directory exists.
 
 ## Stats 
 
-The LinkedIn dump contains 41,093,000 email/password records. 
+The LinkedIn dump contains 82,209,228 email/password records. 
 
-A total of 2834 JSON files will be generated. Each file contains 14,500 records.
+A total of 1644 JSON files will be generated. Each file contains 14,500 records.
 
 ## File Manipulation
 
