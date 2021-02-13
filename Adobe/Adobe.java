@@ -1,4 +1,4 @@
-package Dropbox;
+package Adobe;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -6,33 +6,28 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Dropbox {
+public class Adobe {
 
 	private static Integer lineCount = 0;
 	private static Integer maxLineCount = 0;
 	private static Integer outputFileNumber = 0;
 	
 	public static void main(String[] args) {
-		File file = new File("E:\\BreachDatabases\\Dropbox\\dropbox");
-		ArrayList<String> arFileList = getAllFiles(file);
-	
-		for (String fileName: arFileList) {
-			System.out.println("Currently converting file: " + fileName);
-			readFile(file.getAbsolutePath() + "\\" + fileName);			
-		}
+		File fileCred = new File("E:\\BreachDatabases\\Adobe\\cred");
+		System.out.println("Currently converting file: cred");
+		readFile(fileCred.getAbsolutePath());				
 	}
 	
 	private static String createMetaJSON() {
-		String metajson = "{\"index\" : {\"_index\": \"breach-dropbox\", \"_type\" : \"_doc\", \"_id\": \"" + lineCount + "\"}}";
+		String metajson = "{\"index\" : {\"_index\": \"breach-adobe\", \"_type\" : \"_doc\", \"_id\": \"" + lineCount + "\"}}";
 		//System.out.println(metajson);
 		return metajson;
 	}
 	
 	private static String writeFile(String metajson, String datajson) {
-		File f = new File("E:\\BreachDatabases\\Dropbox\\dropbox\\output\\dropbox_"+outputFileNumber.toString()+".json");
+		File f = new File("E:\\BreachDatabases\\Adobe\\output\\adobe_"+outputFileNumber.toString()+".json");
 		if(!f.exists()){
 			  try {
 				f.createNewFile();
@@ -58,20 +53,20 @@ public class Dropbox {
 	
 	private static boolean createDataJSON(String line) {
 		  try {
-			  String[] arLines = line.split(":");
-			  if (arLines.length >= 2) {
-					String index = " {\"Email\": \"" + arLines[0] + "\"," +
-							       "\"Password\": \"" + arLines[1] + "\"}";
-					//System.out.println(index);
-					String metajson = createMetaJSON();
-					writeFile(metajson, index);
-					return true;
-			  } 
+			  String[] arLines = line.split("\\|");
+			  //System.out.println(Arrays.toString(arLines));
+			  
+			  String index = "{\"Email\": \"" + arLines[2].replace("-", "") + "\"," +
+					       		"\"Password\": \"" + arLines[3].replace("-", "")  + "\"," +
+					       		"\"Hint\": \"" + arLines[4].replace("-", "") + "\"}";
+			  //System.out.println(index);
+			  String metajson = createMetaJSON();
+			  writeFile(metajson, index);
+			  return true;
 		  } catch (Exception e) {
-			  System.out.println("Exception happened in createDataJSON" + e);
+			  System.out.println("Exception happened in createDataJSON on line:" + line);
 			  return false;
 		  }
-		  return false;	
 	}
 	
 	private static void readFile(String fileName) {
@@ -88,7 +83,7 @@ public class Dropbox {
 	            	//System.out.println(line);
 	            	lineCount++;
 	            	maxLineCount++;
-	            	if (maxLineCount > 52000) {
+	            	if (maxLineCount > 55000) {
 	            		maxLineCount = 0;
 	            		outputFileNumber++;
 	            	}
@@ -100,18 +95,4 @@ public class Dropbox {
 	        e.printStackTrace();
 	    }
 	}
-	
-	private static ArrayList<String> getAllFiles(File curDir) {
-        File[] filesList = curDir.listFiles();
-        ArrayList<String> allFiles = new ArrayList<String>();
-        for(File f : filesList){
-            if(f.isFile() && f.getName().contains(".txt")) {
-                System.out.println(f.getName());
-                allFiles.add(f.getName());
-
-            }
-        }
-        System.out.println(allFiles);
-        return allFiles;
-    }
 }
