@@ -11,15 +11,18 @@ def getDocumentById(intCount):
   return y["found"];
  
 def main():
-  intCount = 82209229; # Change this value based on the index you started at.
+  intCount = 0; # Change this value based on the index you started at.
+  bIfMissing = False
   for i in range(0, 348):
     bFound = getDocumentById(intCount)
     if (bFound == False):
-      print('File is missing: webhost_' + str(i) + '.json')
-    else:
-      print('File is found: ' + str(i))
-    intCount = intCount + 44001;
+      bIfMissing = True
+      print('File is missing: tumblr_' + str(i) + '.json')
+    #else:
+      #print('File is found: ' + str(i))
+    intCount = intCount + 44001
   print('-----------------------------')
+  print('Any Files Missing: ' + str(bIfMissing))
  
 if __name__ == "__main__":
   main()
