@@ -16,6 +16,7 @@ public class XSplit {
 	
 	public static void main(String[] args) {
 		File file = new File("E:\\BreachDatabases\\XSplit\\xsplit.txt");
+		System.out.println("Currently converting file: xsplit.txt");
 		readFile(file.getAbsolutePath());			
 	}
 	
@@ -42,8 +43,9 @@ public class XSplit {
 			{
 			    out.println(metajson);
 			    out.println(datajson);
+				lineCount++;
+				maxLineCount++;
 			} catch (IOException e) {
-			    //exception handling left as an exercise for the reader
 				System.out.println("Error in writeFile: " + e.getMessage());
 			}
 		
@@ -71,8 +73,6 @@ public class XSplit {
 					//System.out.println(index);
 					String metajson = createMetaJSON();
 					writeFile(metajson, index);
-					lineCount++;
-					maxLineCount++;
 					return true;	
 			  	}
 			   
@@ -91,7 +91,7 @@ public class XSplit {
 				while((line = br.readLine()) != null) {
 				    if (line.contains("@")) {
 				    	createDataJSON(line);
-				    	//System.out.println(line)l
+				    	//System.out.println(line)
 				    	if (maxLineCount > 45000) {
 				    		maxLineCount = 0;
 				    		outputFileNumber++;
@@ -99,7 +99,6 @@ public class XSplit {
 				    }
 				}
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				System.out.println("Error Reading File" + e);
 				e.printStackTrace();
 			}
