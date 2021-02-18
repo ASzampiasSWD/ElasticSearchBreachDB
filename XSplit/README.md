@@ -2,9 +2,8 @@
 
 In November 2013, the makers of gaming live streaming and recording software XSplit was compromised in an online attack. The data breach leaked almost 3M names, email addresses, usernames and hashed passwords.
 
-<b>Breach date</b>: 7 November 2013<br />
-<b>Compromised accounts</b>: 2,983,472<br />
-<b>Compromised data</b>: Email addresses, Names, Passwords, Usernames<br />
+<b>Breach Date</b>: 7 November 2013<br />
+<b>Compromised Data</b>: Email addresses, Names, Passwords, Usernames<br />
 
 -- haveIbeenPwned
 
@@ -23,7 +22,7 @@ Change line <b>29</b> to where you want the output files to be. Make sure that t
 
 ## Stats 
 
-The XSplit dump contains 68,680,738 email/password records. 
+The XSplit dump contains 2,499,961 email/password records. 
 
 A total of 55 JSON files will be generated. Each file contains 45,001 records.
 
