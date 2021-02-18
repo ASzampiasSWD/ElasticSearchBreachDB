@@ -10,9 +10,9 @@ In July 2012, Yahoo! had their online publishing service "Voices" compromised vi
 
 ## Description
 
-The Java code converts the XSplit .txt files into ElasticSearch compliant JSON.
+The Java code converts the Yahoo .txt files into ElasticSearch compliant JSON.
 
-1. Using the Java code, data to json conversion should take approximately 20 mins on Desktop.
+1. Using the Java code, data to json conversion should take approximately 25 mins on Desktop.
   
 ## Necessary Steps
 
