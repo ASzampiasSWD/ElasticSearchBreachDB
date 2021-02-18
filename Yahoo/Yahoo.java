@@ -36,16 +36,16 @@ public class Yahoo {
 				e.printStackTrace();
 			}
 		}
-		
-		
+				
 		try(FileWriter fw = new FileWriter(f.getAbsolutePath(), true);
 			    BufferedWriter bw = new BufferedWriter(fw);
 			    PrintWriter out = new PrintWriter(bw))
 			{
 			    out.println(metajson);
 			    out.println(datajson);
+			    lineCount++;
+		    	maxLineCount++;
 			} catch (IOException e) {
-			    //exception handling left as an exercise for the reader
 				System.out.println("Error in writeFile: " + e.getMessage());
 			}
 		
@@ -80,8 +80,6 @@ public class Yahoo {
 				    if (line.contains("@")) {
 				    	createDataJSON(line);
 				    	//System.out.println(line);
-				    	lineCount++;
-				    	maxLineCount++;
 				    	if (maxLineCount > 65000) {
 				    		maxLineCount = 0;
 				    		outputFileNumber++;
@@ -89,7 +87,6 @@ public class Yahoo {
 				    }
 				}
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				System.out.println("Error Reading File" + e);
 				e.printStackTrace();
 			}
