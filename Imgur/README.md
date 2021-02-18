@@ -1,8 +1,15 @@
+## Overview
+
+In September 2013, the online image sharing community imgur suffered a data breach. A selection of the data containing 1.7 million email addresses and passwords surfaced more than 4 years later in November 2017. Although imgur stored passwords as SHA-256 hashes, the data in the breach contained plain text passwords suggesting that many of the original hashes had been cracked. imgur advises that they rolled over to bcrypt hashes in 2016.
+
+<b>Breach date</b>: 1 September 2013<br />
+<b>Compromised data</b>: Email addresses, Passwords<br />
+
 ## Description
 
 The Java code converts the Imgur .txt files into ElasticSearch compliant JSON.
 
-1. Using the Java code, data to json conversion should take approximately 10 mins on Desktop.
+Using the Java code, data to json conversion should take approximately <b>10 mins</b> on Desktop.
 
 ## Necessary Steps
 
