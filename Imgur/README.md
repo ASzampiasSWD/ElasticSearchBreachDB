@@ -5,6 +5,8 @@ In September 2013, the online image sharing community imgur suffered a data brea
 <b>Breach date</b>: 1 September 2013<br />
 <b>Compromised data</b>: Email addresses, Passwords<br />
 
+-- haveIbeenPwned
+
 ## Description
 
 The Java code converts the imgur.txt file into ElasticSearch compliant JSON.
