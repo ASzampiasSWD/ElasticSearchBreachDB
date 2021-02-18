@@ -12,7 +12,7 @@ In July 2012, Yahoo! had their online publishing service "Voices" compromised vi
 
 The Java code converts the Yahoo .txt files into ElasticSearch compliant JSON.
 
-1. Using the Java code, data to json conversion should take approximately 25 mins on Desktop.
+1. Using the Java code, data to json conversion should take approximately 7 mins on Desktop.
   
 ## Necessary Steps
 
@@ -22,7 +22,7 @@ Change line <b>31</b> to where you want the output files to be. Make sure that t
 
 ## Stats 
 
-The Yahoo dump contains 5,737,975 email/password records. 
+The Yahoo dump contains 5,731,225 email/password records. 
 
 A total of 88 JSON files will be generated. Each file contains 65,001 records.
 
