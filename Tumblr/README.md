@@ -10,7 +10,7 @@ In early 2013, tumblr suffered a data breach which resulted in the exposure of o
 
 ## Description
 
-The Java code converts the Tumblr .txt files into ElasticSearch compliant JSON.
+The Java code converts the Tumblr_2013_users.txt file into ElasticSearch compliant JSON.
 
 1. Using the Java code, data to json conversion should take approximately 1 hour on Desktop.
   
