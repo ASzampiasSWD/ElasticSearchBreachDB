@@ -44,6 +44,8 @@ public class Tumblr {
 			{
 			    out.println(metajson);
 			    out.println(datajson);
+		    	lineCount++;
+		    	maxLineCount++;
 			} catch (IOException e) {
 			    //exception handling left as an exercise for the reader
 				System.out.println("Error in writeFile: " + e.getMessage());
@@ -57,8 +59,8 @@ public class Tumblr {
 			  String[] arLines = line.split(":");
 			  if (arLines.length >= 2) {
 				  if (arLines[1].length() > 1) {
-					String index = "{\"Email\": \"" + arLines[0] + "\"," +
-							       "\"Password\": \"" + arLines[1] + "\"}";
+					String index = "{\"Email\": \"" + escape(arLines[0]) + "\"," +
+							       "\"Password\": \"" + escape(arLines[1]) + "\"}";
 					//System.out.println(index);
 					String metajson = createMetaJSON();
 					writeFile(metajson, index);
@@ -82,8 +84,6 @@ public class Tumblr {
 				    if (line.contains("@")) {
 				    	createDataJSON(line);
 				    	//System.out.println(line);
-				    	lineCount++;
-				    	maxLineCount++;
 				    	if (maxLineCount > 55000) {
 				    		maxLineCount = 0;
 				    		outputFileNumber++;
@@ -99,5 +99,41 @@ public class Tumblr {
 	    catch (FileNotFoundException e) {
 	        e.printStackTrace();
 	    }
+	}
+	
+	 public static String escape(String input) {
+	    StringBuilder output = new StringBuilder();
+
+	    for(int i=0; i<input.length(); i++) {
+	      char ch = input.charAt(i);
+	      int chx = (int) ch;
+
+	      // let's not put any nulls in our strings
+	      assert(chx != 0);
+
+	      if(ch == '\n') {
+	        output.append("\\n");
+	      } else if(ch == '\t') {
+	        output.append("\\t");
+	      } else if(ch == '\r') {
+	        output.append("\\r");
+	      } else if(ch == '\\') {
+	        output.append("\\\\");
+	      } else if(ch == '"') {
+	        output.append("\\\"");
+	      } else if(ch == '\b') {
+	        output.append("\\b");
+	      } else if(ch == '\f') {
+	        output.append("\\f");
+	      } else if(chx >= 0x10000) {
+	        assert false : "Java stores as u16, so it should never give us a character that's bigger than 2 bytes. It literally can't.";
+	      } else if(chx > 127) {
+	        output.append(String.format("\\u%04x", chx));
+	      } else {
+	        output.append(ch);
+	      }
+	    }
+
+	    return output.toString();
 	}
 }
