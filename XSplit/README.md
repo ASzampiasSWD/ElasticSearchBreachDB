@@ -2,12 +2,11 @@
 
 In November 2013, the makers of gaming live streaming and recording software XSplit was compromised in an online attack. The data breach leaked almost 3M names, email addresses, usernames and hashed passwords.
 
-Breach date: 7 November 2013<br />
-Date added to HIBP: 8 August 2015<br />
-Compromised accounts: 2,983,472<br />
-Compromised data: Email addresses, Names, Passwords, Usernames<br />
+<b>Breach date</b>: 7 November 2013<br />
+<b>Compromised accounts</b>: 2,983,472<br />
+<b>Compromised data</b>: Email addresses, Names, Passwords, Usernames<br />
 
-- haveIbeenPwned
+-- haveIbeenPwned
 
 
 ## Description
