@@ -10,15 +10,15 @@ In November 2013, the makers of gaming live streaming and recording software XSp
 
 ## Description
 
-The Java code converts the XSplit .txt files into ElasticSearch compliant JSON.
+The Java code converts the xsplit.txt file into ElasticSearch compliant JSON.
 
-1. Using the Java code, data to json conversion should take approximately 20 mins on Desktop.
+Using the Java code, data to json conversion should take approximately <b>3 mins</b> on Desktop.
   
 ## Necessary Steps
 
 Change line <b>18</b> to the directory where the .txt files are located
 
-Change line <b>29</b> to where you want the output files to be. Make sure that the directory exists.
+Change line <b>30</b> to where you want the output files to be. Make sure that the directory exists.
 
 ## Stats 
 
