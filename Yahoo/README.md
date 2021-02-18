@@ -12,7 +12,7 @@ In July 2012, Yahoo! had their online publishing service "Voices" compromised vi
 
 The Java code converts the Yahoo .txt files into ElasticSearch compliant JSON.
 
-1. Using the Java code, data to json conversion should take approximately 7 mins on Desktop.
+Using the Java code, data to json conversion should take approximately <b>7 mins</b> on Desktop.
   
 ## Necessary Steps
 
