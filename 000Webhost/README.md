@@ -11,7 +11,7 @@ In approximately March 2015, the free web hosting provider 000webhost suffered a
 
 The Java code converts the 000webhost.com.txt file into ElasticSearch compliant JSON.
 
-Using the Java code, data to json conversion should take approximately <b>15 mins</b> on Desktop.
+Using the Java code, data to json conversion should take approximately <b>20 mins</b> on Desktop.
   
 ## Necessary Steps
 
@@ -21,9 +21,9 @@ Change line <b>31</b> to where you want the output files to be. Make sure that t
 
 ## Stats 
 
-The 000Webhost dump contains XNumber email/password records. 
+The 000Webhost dump contains 15,251,121 email/ip/name/password records. 
 
-A total of XNumber JSON files will be generated. Each file contains 44,001 records.
+A total of 346 JSON files will be generated. Each file contains 44,001 records.
 
 ## File Manipulation
 
