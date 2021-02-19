@@ -11,14 +11,17 @@ def getDocumentById(intCount):
  
 def main():
   intCount = 0
+  bIfMissing = False
   for i in range(0, 1321):
     bFound = getDocumentById(intCount)
     if (bFound == False):
       print('File is missing: dropbox_' + str(i) + '.json')
-    else:
-      print('File is found: ' + str(i))
+      bIfMissing = True
+    #else:
+      #print('File is found: ' + str(i))
     intCount = intCount + 52001;
   print('-----------------------------')
+  print('Any Files Missing: ' + str(bIfMissing))
  
 if __name__ == "__main__":
   main()

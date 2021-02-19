@@ -10,7 +10,7 @@ def getDocumentById(intCount):
   return y["found"];
  
 def main():
-  intCount = 0; # Change this value based on the index you started at.
+  intCount = 0;
   bIfMissing = False
   for i in range(0, 970):
     bFound = getDocumentById(intCount)
