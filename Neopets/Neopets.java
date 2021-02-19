@@ -49,8 +49,9 @@ public class Neopets {
 			{
 			    out.println(metajson);
 			    out.println(datajson);
+				lineCount++;
+				maxLineCount++;
 			} catch (IOException e) {
-			    //exception handling left as an exercise for the reader
 				System.out.println("Error in writeFile: " + e.getMessage());
 			}
 		
@@ -99,8 +100,6 @@ public class Neopets {
 					//System.out.println(index);
 					String metajson = createMetaJSON();
 					writeFile(metajson, index);
-					lineCount++;
-					maxLineCount++;
 					return true;
 				  }
 			  } 
@@ -127,7 +126,6 @@ public class Neopets {
 				    }
 				}
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				System.out.println("Error Reading File" + e);
 				e.printStackTrace();
 			}
