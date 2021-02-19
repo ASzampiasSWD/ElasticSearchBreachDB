@@ -2,7 +2,7 @@
 
 The Java code converts the Dropbox .txt files into ElasticSearch compliant JSON.
 
-1. Using the Java code, data to json conversion should take approximately 1 hour 20 mins on Desktop.
+Using the Java code, data to json conversion should take approximately <b>2 hours</b> on Desktop.
   
 ## Necessary Steps
 
@@ -12,7 +12,7 @@ Change line <b>35</b> to where you want the output files to be. Make sure that t
 
 ## Stats 
 
-The LinkedIn dump contains 68,680,738 email/password records. 
+The Dropbox dump contains 68,679,010 email/password records. 
 
 A total of 1320 JSON files will be generated. Each file contains 52,001 records.
 
