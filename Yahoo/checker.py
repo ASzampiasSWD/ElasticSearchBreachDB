@@ -7,10 +7,11 @@ import json
 def getDocumentById(intCount):
   x = requests.get('http://localhost:9200/breach-yahoo/_doc/' + str(intCount))
   y = json.loads(x.text)
+  #print(y["found"]);
   return y["found"];
  
 def main():
-  intCount = 0;
+  intCount = 0; # Change this value based on the index you started at.
   bIfMissing = False
   for i in range(0, 89):
     bFound = getDocumentById(intCount)
