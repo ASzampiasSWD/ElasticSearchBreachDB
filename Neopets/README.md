@@ -2,8 +2,8 @@
 
 In May 2016, a set of breached data originating from the virtual pet website "Neopets" was found being traded online. Allegedly hacked "several years earlier", the data contains sensitive personal information including birthdates, genders and names as well as almost 27 million unique email addresses. Passwords were stored in plain text and IP addresses were also present in the breach.
 
-<b>Breach Date</b>: 5 May 2013
-<b>Compromised Data</b>: Dates of birth, Email addresses, Genders, Geographic locations, IP addresses, Names, Passwords, Usernames
+<b>Breach Date</b>: 5 May 2013<br />
+<b>Compromised Data</b>: Dates of birth, Email addresses, Genders, Geographic locations, IP addresses, Names, Passwords, Usernames<br />
 
 -- haveIbeenPwned
 
