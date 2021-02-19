@@ -1,9 +1,9 @@
 ## Overview
 
-In approximately March 2015, the free web hosting provider 000webhost suffered a major data breach that exposed almost 15 million customer records. The data was sold and traded before 000webhost was alerted in October. The breach included names, email addresses and plain text passwords.
+In May 2016, a set of breached data originating from the virtual pet website "Neopets" was found being traded online. Allegedly hacked "several years earlier", the data contains sensitive personal information including birthdates, genders and names as well as almost 27 million unique email addresses. Passwords were stored in plain text and IP addresses were also present in the breach.
 
-<b>Breach Date</b>: 1 March 2015<br />
-<b>Compromised Data</b>: Email addresses, IP addresses, Names, Passwords<br />
+<b>Breach Date</b>: 5 May 2013<br />
+<b>Compromised Data</b>: Dates of birth, Email addresses, Genders, Geographic locations, IP addresses, Names, Passwords, Usernames<br />
 
 -- haveIbeenPwned
 
@@ -15,13 +15,13 @@ Using the Java code, data to json conversion should take approximately <b>1 hour
   
 ## Necessary Steps
 
-Change line <b>19</b> to the directory where the .txt files are located
+Change line <b>21</b> to the directory where the .txt files are located
 
-Change line <b>31</b> to where you want the output files to be. Make sure that the directory exists.
+Change line <b>36</b> to where you want the output files to be. Make sure that the directory exists.
 
 ## Stats 
 
-The 000Webhost dump contains XNumber email/password records. 
+The Neopets dump contains 35,878,022 email/password records. 
 
 A total of 969 JSON files will be generated. Each file contains 44,001 records.
 
