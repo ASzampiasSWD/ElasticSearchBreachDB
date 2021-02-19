@@ -2,7 +2,7 @@
 
 The Java code converts the Dropbox .txt files into ElasticSearch compliant JSON.
 
-1. Using the Java code, data to json conversion should take approximately 1 hour 20 mins on Desktop.
+1. Using the Java code, data to json conversion should take approximately <b>2 hours</b> on Desktop.
   
 ## Necessary Steps
 
