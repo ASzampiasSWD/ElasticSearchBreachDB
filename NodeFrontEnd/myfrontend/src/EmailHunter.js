@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import axios from "axios";
-import './index.css';
-import ReactDOM from 'react-dom';
-import {Button, FormControlLabel, FormControl, FormLabel, RadioGroup, Radio, TextField} from '@material-ui/core/';
+import {Button, FormControlLabel, FormControl, FormLabel, RadioGroup, Radio } from '@material-ui/core/';
 
 export default class EmailHunter extends Component {
     constructor() {
@@ -14,10 +12,6 @@ export default class EmailHunter extends Component {
             searchSize : '5'
         };
     }
-
-    /*componentDidMount = () => {
-        console.log("Loaded!!!");
-    };*/
 
     setEmail = (event) => {
         this.setState({ email : event.target.value});
@@ -34,15 +28,10 @@ export default class EmailHunter extends Component {
     };
 
     downloadJSONFile = async () => {
-        /*console.log("button clicked!!");
-        await axios.get("/downloadJSON").then(response => {
-            console.log(response);
-        });*/
-
         axios({
             url: '/downloadJSON',
             method: 'GET',
-            responseType: 'blob', // important
+            responseType: 'blob',
           }).then((response) => {
             const url = window.URL.createObjectURL(new Blob([response.data]));
             const link = document.createElement('a');
@@ -62,7 +51,6 @@ export default class EmailHunter extends Component {
             });
         }
         if (this.state.searchOption == "username") {
-            console.log('IN USERNAMEEEE');
             await axios.get("/queryByUsername?username=" + this.state.email + "&size=" + this.state.searchSize).then(response => {
                 console.log(response);
                 console.log(JSON.stringify(response.data[0]._source.Name));
@@ -71,7 +59,6 @@ export default class EmailHunter extends Component {
         }
 
         if (this.state.searchOption == "ip") {
-            console.log('IN IP');
             await axios.get("/queryByIP?ip=" + this.state.email + "&size=" + this.state.searchSize).then(response => {
                 console.log(response);
                 this.setState({elasticsearch : response.data});
@@ -84,13 +71,14 @@ export default class EmailHunter extends Component {
         let listItems = "";
         if(this.state.elasticsearch){
             listItems = this.state.elasticsearch.map((document) =>
-            <div className="results-list"><table><tr><td>Index:</td><td>{document._index}</td></tr>
+                <div className="results-list"><table>
+                    <tr><td>Index:</td><td>{document._index}</td></tr>
                     <tr><td>Email:</td><td>{document._source.Email}</td></tr>
-                   <tr><td>Password:</td><td>{document._source.Password}</td></tr>
-                   <tr><td>Username:</td><td>{document._source.Username}</td></tr>
-                   <tr><td>Name:</td><td>{document._source.Name}</td></tr>
-                   <tr><td>IP Address:</td><td>{document._source["IP Address"]}</td></tr>
-                   </table></div>);
+                    <tr><td>Password:</td><td>{document._source.Password}</td></tr>
+                    <tr><td>Username:</td><td>{document._source.Username}</td></tr>
+                    <tr><td>Name:</td><td>{document._source.Name}</td></tr>
+                    <tr><td>IP Address:</td><td>{document._source["IP Address"]}</td></tr>
+                </table></div>);
         }
         return (
             <div>
@@ -127,10 +115,8 @@ export default class EmailHunter extends Component {
                 <br /><br />
                 </div>
 
-
             </div>
             </div>
         )
     }
-
 }

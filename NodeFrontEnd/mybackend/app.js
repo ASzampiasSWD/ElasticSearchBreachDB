@@ -13,6 +13,14 @@ const client = new elasticsearch.Client({
     apiVersion: '7.2', // use the same version of your Elasticsearch instance
 });
 
+const checkSearchSize = (searchSize, res) => {
+    if (searchSize == 5 || searchSize == 100 || searchSize == 10000) {
+        return true;
+    }
+    res.send('<h1>Error. Size must be 5, 100, or 10000.</h1>');
+    return false;
+}
+
 async function queryByEmail(email, searchSize) {
    let answer = '';
    let jsonFile = '';
@@ -30,7 +38,6 @@ async function queryByEmail(email, searchSize) {
       })
 
       for (const document of response.hits.hits) {
-        //console.log('Hit: ', document);
        // console.log(document["_source"]["Password"]);
         document["_source"]["Password"] = "Replaced for DEMO";
         jsonFile += JSON.stringify(document) + '\n';
@@ -98,17 +105,19 @@ async function queryByUsername(username, searchSize) {
  }
 
 app.get('/queryByEmail', async (req, res) => {
-    var email = req.query.email;
-    var size = req.query.size;
+    let email = req.query.email;
+    let size = req.query.size;
     console.log('NODE EMAIL: ' + email);
     console.log('NODE SIZE: ' + size);
-    let esResponse = await queryByEmail(email, size);
-    res.send(esResponse);
+    if (checkSearchSize(req.query.size, res)) {
+        let esResponse = await queryByEmail(email, size);
+        res.send(esResponse);
+    }
 });
 
 app.get('/queryByUsername', async (req, res) => {
-    var username = req.query.username;
-    var size = req.query.size;
+    let username = req.query.username;
+    let size = req.query.size;
     console.log('NODE EMAIL: ' + username);
     console.log('NODE SIZE: ' + size);
     let esResponse = await queryByUsername(username, size);
@@ -125,16 +134,20 @@ app.get('/queryByIP', async (req, res) => {
     var size = req.query.size;
     console.log('NODE EMAIL: ' + ip);
     console.log('NODE SIZE: ' + size);
-    let esResponse = await queryByIP(ip, size);
-    res.send(esResponse);
+    if (checkSearchSize(req.query.size, res)) {
+        let esResponse = await queryByIP(ip, size);
+        res.send(esResponse);
+    }
 });
 
 app.get('/', (req, res) => {
-    //ar email = req.query.email;
-    //console.log('NODE EMAIL: ' + email);
-    //let esResponse = await queryByEmail(email);
-    //res.send(esResponse);
     res.send('<h1>HELLO</h1>');
+});
+
+app.get('/test', (req, res) => {
+    console.log(req.query.size);
+    let bNumber = checkSearchSize(req.query.size, res);
+    res.send('<h1>' + bNumber + '</h1>');
 });
 
 
