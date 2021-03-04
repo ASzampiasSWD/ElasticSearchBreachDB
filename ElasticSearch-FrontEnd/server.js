@@ -46,7 +46,6 @@ async function queryByEmail(email, searchSize) {
       console.log("HITS: " + response.hits.hits.length);
       fs.writeFile('JSONResults.txt', jsonFile, function (err) {
         if (err) return console.log(err);
-        console.log('JSON > JSONResults.txt');
       });
       return answer;
 }
