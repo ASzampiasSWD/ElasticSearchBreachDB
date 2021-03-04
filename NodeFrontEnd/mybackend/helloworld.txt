@@ -1,0 +1,5 @@
+{"_index":"breach-exploitin","_type":"_doc","_id":"217703184","_score":923.5315,"_source":{"Email":"abercrombie18@live.com","Password":"Replaced"}}
+{"_index":"breach-exploitin","_type":"_doc","_id":"507928278","_score":923.5315,"_source":{"Email":"abercrombie18@live.com","Password":"Replaced"}}
+{"_index":"breach-exploitin","_type":"_doc","_id":"735877552","_score":923.5315,"_source":{"Email":"abercrombie18@live.com","Password":"Replaced"}}
+{"_index":"breach-adobe","_type":"_doc","_id":"80927165","_score":767.33136,"_source":{"Email":"abercrombie18@live.com","Password":"Replaced","Hint":"Store 2"}}
+{"_index":"breach-xsplit","_type":"_doc","_id":"267818","_score":226.67685,"_source":{"Username":"SakuraFACE","Name":"Amanda Zamp","Email":"abercrombie18@live.com","Password":"Replaced"}}

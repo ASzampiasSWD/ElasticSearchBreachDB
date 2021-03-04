@@ -1,38 +1,96 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  width: 100%;
 }
 
 .App-header {
-  background-color: #282c34;
+  /*background-color: #282c34;*/
+  background-color: #FFFFFF;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  /*color: white;*/
+}
+
+table { border: 1px solid white; border-collapse: collapse; margin-bottom: 20px; margin-left: auto; margin-right: auto; width: 300px; }
+
+td { border: 1px solid white; padding: 2px; }
+
+:root {
+  --ice-cold: #A0D2EA;
+  --freeze-purple: #E5EAF4;
+  --medium-purple: #FFFFFF;
+  --purple-pain: #FFFFFF ;
+  --heavy-purple: #4A4E60;
+}
+body{
+  background-color: var(--heavy-purple);
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.searchBar {
+  width: 30%;
+  text-align: left;
+  background-color: var(--freeze-purple);
+  padding: 20px;
+}
+
+.results {
+  width: calc(70% - 20px);
+  background-color: var(--medium-purple);
+  padding: 20px;
+}
+
+input[type="text"] {
+  width: calc(100% - 100px);
+  height: 32px;
+  margin-right: 3px;
+  margin-top: 0;
+  border: none;
+  font-size: 16px;
+}
+
+fieldset.MuiFormControl-root {
+  margin-top: 20px;
+}
+
+legend.MuiFormLabel-root {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.results-header {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-bottom: 20px;
 }
-
-.App-link {
-  color: #61dafb;
+.results-list > table {
+  text-align: left;
+  width: 100%;
+  background-color: var(--freeze-purple);
+  border: none;
+  box-shadow: 0 0.75px 6px rgb(37 35 40 / 5%), 0 1px 1px rgb(37 35 40 / 5%);
+  border-radius: 4px;
+  margin-bottom: 30px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.results-list > table tr:nth-child(odd) {
+  background: #ecf1fb;
+}
+.results-list > table tr td:first-child {
+  font-weight: bold;
+  padding: 10px;
+  width: 100px;
 }

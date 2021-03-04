@@ -1,0 +1,5 @@
+{"_index":"breach-adobe","_type":"_doc","_id":"22312379","_score":18.526062,"_source":{"Email":"bcampbell@salesforce.comm","Password":"Replaced for DEMO","Hint":"golden 2008"}}
+{"_index":"breach-tumblr","_type":"_doc","_id":"20733638","_score":18.27082,"_source":{"Email":"chantal.robert@salesforce.com.au","Password":"Replaced for DEMO"}}
+{"_index":"breach-exploitin","_type":"_doc","_id":"62230155","_score":18.246206,"_source":{"Email":"668@salesforce.com.au","Password":"Replaced for DEMO"}}
+{"_index":"breach-exploitin","_type":"_doc","_id":"213632922","_score":18.246206,"_source":{"Email":"harte@salesforce.com.au","Password":"Replaced for DEMO"}}
+{"_index":"breach-exploitin","_type":"_doc","_id":"445426075","_score":18.246206,"_source":{"Email":"Brett.Ray@salesforce.com.au","Password":"Replaced for DEMO"}}
