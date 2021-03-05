@@ -21,6 +21,15 @@ const checkSearchSize = (searchSize, res) => {
     return false;
 }
 
+const checkInputSize = (input, res) => {
+  if (input.length > 100 || input.length <= 0) {
+    res.send('RANGE-ERROR');
+    console.log('FAILED');
+    return false;
+  }
+  return true;
+};
+
 async function queryByEmail(email, searchSize) {
    let answer = '';
    let jsonFile = '';
@@ -43,7 +52,7 @@ async function queryByEmail(email, searchSize) {
         jsonFile += JSON.stringify(document) + '\n';
       }
       answer = response.hits.hits;
-      console.log("HITS: " + response.hits.hits.length);
+      //console.log("HITS: " + response.hits.hits.length);
       fs.writeFile('JSONResults.txt', jsonFile, function (err) {
         if (err) return console.log(err);
       });
@@ -68,7 +77,7 @@ async function queryByUsername(username, searchSize) {
        console.log('RESPONSE: ' + JSON.stringify(response.hits.hits));
  
        for (const document of response.hits.hits) {
-         console.log('Hitttttt: ', document);
+         //console.log('Hitttttt: ', document);
          //console.log(document["_source"]["Password"]);
          document["_source"]["Password"] = "Replaced for DEMO";
        }
@@ -93,7 +102,7 @@ async function queryByUsername(username, searchSize) {
        })
  
        for (const document of response.hits.hits) {
-         console.log('Hit: ', document);
+         //console.log('Hit: ', document);
          //console.log(document["_source"]["Password"]);
          document["_source"]["Password"] = "Replaced for DEMO";
         // answer += JSON.stringify(document) + "\n";
@@ -106,9 +115,7 @@ async function queryByUsername(username, searchSize) {
 app.get('/queryByEmail', async (req, res) => {
     let email = req.query.email;
     let size = req.query.size;
-    console.log('NODE EMAIL: ' + email);
-    console.log('NODE SIZE: ' + size);
-    if (checkSearchSize(req.query.size, res)) {
+    if (checkSearchSize(size, res) && checkInputSize(email, res)) {
         let esResponse = await queryByEmail(email, size);
         res.send(esResponse);
     }
@@ -117,10 +124,10 @@ app.get('/queryByEmail', async (req, res) => {
 app.get('/queryByUsername', async (req, res) => {
     let username = req.query.username;
     let size = req.query.size;
-    console.log('NODE EMAIL: ' + username);
-    console.log('NODE SIZE: ' + size);
-    let esResponse = await queryByUsername(username, size);
-    res.send(esResponse);
+    if (checkSearchSize(size, res) && checkInputSize(username, res)) {
+      let esResponse = await queryByUsername(username, size);
+      res.send(esResponse);
+    }
 });
 
 app.get('/downloadJSON', (req, res) => {
@@ -129,26 +136,13 @@ app.get('/downloadJSON', (req, res) => {
 });
 
 app.get('/queryByIP', async (req, res) => {
-    var ip = req.query.ip;
-    var size = req.query.size;
-    console.log('NODE EMAIL: ' + ip);
-    console.log('NODE SIZE: ' + size);
-    if (checkSearchSize(req.query.size, res)) {
+    let ip = req.query.ip;
+    let size = req.query.size;
+    if (checkSearchSize(size, res) && checkInputSize(ip, res)) {
         let esResponse = await queryByIP(ip, size);
         res.send(esResponse);
     }
 });
-
-app.get('/', (req, res) => {
-    res.send('<h1>HELLO</h1>');
-});
-
-app.get('/test', (req, res) => {
-    console.log(req.query.size);
-    let bNumber = checkSearchSize(req.query.size, res);
-    res.send('<h1>' + bNumber + '</h1>');
-});
-
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}!`);

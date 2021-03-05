@@ -1,5 +1,0 @@
-{"_index":"breach-exploitin","_type":"_doc","_id":"176531788","_score":926.90466,"_source":{"Email":"tester5@gmail.com","Password":"Replaced for DEMO"}}
-{"_index":"breach-exploitin","_type":"_doc","_id":"67465147","_score":926.90466,"_source":{"Email":"tester5@gmail.com","Password":"Replaced for DEMO"}}
-{"_index":"breach-exploitin","_type":"_doc","_id":"90733102","_score":926.90466,"_source":{"Email":"tester5@gmail.com","Password":"Replaced for DEMO"}}
-{"_index":"breach-exploitin","_type":"_doc","_id":"128183433","_score":926.90466,"_source":{"Email":"tester5@gmail.com","Password":"Replaced for DEMO"}}
-{"_index":"breach-tumblr","_type":"_doc","_id":"23818705","_score":837.9086,"_source":{"Email":"tester5@gmail.com","Password":"Replaced for DEMO"}}
