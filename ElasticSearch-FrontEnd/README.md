@@ -1,7 +1,4 @@
 # Getting Started with ElasticSearch React/Node.js!
 
-Cd Into the directory. Run npm install.
-
-# Getting Started with ElasticSearch React/Node.js!
-
-Run: npm run dev.
+1. cd Into the directory. Run npm install.
+2. Run: npm run dev.
